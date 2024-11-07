@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+    .date{
+        background-color: #fff;
+        box-shadow: 0 4px 8px #000;
+        width: 300px;
+        text-align: center;
+        border-radius: 20px;
+        height: 250px;
+        
+       
+        
+
+    }
+    .month{
+        background-color: crimson;
+        padding: 20px;
+        font-size: 25px;
+        border-radius: 20px 20px 0 0;
+        position: relative;
+        
+
+    }
+</style>
+<body>
+
+    <div class="date">
+        <p class="month">May</p>
+        <p class="day-name">Friday</p>
+        <p class="day-number">20</p>
+        <p class="year">2023</p>
+    </div>
+    <div>
+        <button><a href="practice.html"></a>practice</button>
+        <button><a href="Ripple-btn.html">Ripple-btn</a></button>
+        <button><a href="text-effect.html">text-effect</a></button>
+    </div>
+    
+    <script>
+        const month = document.querySelector('.month');
+        const dayName = document.querySelector('.day-name');
+        const dayNumber = document.querySelector('.day-number');
+        const year = document.querySelector('.year');
+        //const top = -25;
+        month.style.setProperty('top',`-25px`);
+
+        const date = new Date();
+        month.innerHTML = date.toLocaleString('en',{month:"long"});
+        dayName.innerHTML = date.toLocaleString('en',{weekday:"long"});
+        dayNumber.innerHTML = date.getDate();
+        year.innerHTML = date.getFullYear();
+
+
+
+        console.log(date)
+
+    </script>
+</body>
+</html>

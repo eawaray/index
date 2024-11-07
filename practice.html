@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    
+    
+    <style>
+        body{
+            height: 90vh;
+}
+
+
+div{
+background: url('image/1.jpg');
+    background-size: cover;
+width: 100px;
+height: 100px;
+
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%,-50%);
+animation: animate 2s ease-in infinite;
+border-radius: 100px;
+}
+
+@keyframes animate {
+    from{
+        transform: translate(-50%,-50%);
+        filter: hue-rotate(0);
+
+
+    }
+    to{
+        transform: translate(-50%,-5000%);
+
+        opacity: 0;
+        filter: hue-rotate(750deg);
+    }
+}
+
+
+
+    </style>
+  
+</head>
+<body>
+
+   
+   
+<script>
+    const body = document.querySelector('body');
+body.style.backgroundColor = '#000';
+
+body.addEventListener('mousemove',event=>{
+    //console.log('hi')
+    const x = event.offsetX;
+    const y = event.offsetY;
+    const divEl = document.createElement('div');
+    divEl.style.left =x + 'px';
+    divEl.style.top =y + 'px';
+    const size = Math.random()*100;
+    console.log(divEl.style);
+    divEl.style.width = size+ 'px';
+    divEl.style.height = size+ 'px';
+    body.appendChild(divEl);
+    setTimeout(() => {
+        divEl.remove();
+    },10000)
+
+
+});
+</script>
+</body>
+</html>

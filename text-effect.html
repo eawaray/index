@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: coral;
+        display: flex;
+        justify-content: center;
+        height: 90vh;
+        align-items: center;
+        color:#000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+
+    }
+</style>
+<body>
+    <div></div>
+
+   <script>
+    const careers = ['web developer',
+        'youtube','marketer'
+    ];
+    let go = 0;
+    let went = 0;//0,1,2,3,4,5,6,7,
+    update();
+    
+    
+    function update(){
+        went++;  
+    const con =document.querySelector('div');
+    con.innerHTML = `<h1>I am  ${careers[go].slice(0,went)}</h1>`;
+   
+   
+    setTimeout(update,250); 
+    
+   if(went === careers[go].length){
+        go++;
+        went = 0;
+    } 
+    if(go === careers.length){
+        go = 0;
+    }
+      
+    }
+
+  console.log(careers[2].slice(0,8)) ;
+  console.log(8 === careers[go].length);
+   </script> 
+</body>
+</html>
